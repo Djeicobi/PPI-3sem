@@ -14,6 +14,45 @@
 
 8) Select CodProj, Avg(Horas) from Atuacao Group By CodProj;
 
-9) Select CodProj, Min(Horas) from Atuacao where funcao IS NOT NULL Group By funcao; 
+9) Select funcao, Min(Horas) from Atuacao where funcao IS NOT NULL Group By funcao; 
 
 10) Select CodProj, Sum(Horas) from Atuacao where CodEng = 95 or funcao = "Supervisor" Group By CodProj;
+
+
+
+2) Da atuação, mostrar o código do engenheiro e o maior valor de horas,
+   agrupando o resultado pelo código de engenheiro. MOSTRANDO SOMENTE OS
+   RESULTADOS MAIORES QUE 10.
+
+   SELECT CODENG, MAX(HORAS)
+   FROM ATUACAO
+   GROUP BY CODENG
+   HAVING MAX(HORAS) > 10;
+
+3) Consultar a média das horas de atuação agrupando pelo código de projeto.
+   MOSTRANDO SOMENTE OS RESULTADOS EM QUE A MEDIA E MENOR IGUAL A 6.
+
+   SELECT CODPROJ, AVG(HORAS)
+   FROM ATUACAO
+   GROUP BY CODPROJ
+   HAVING AVG(HORAS) <= 6;
+	
+4) Consultar o menor valor de horas agrupando pela função, quando a mesma não
+   for nula. MOSTRANDO SOMENTE OS RESULTADOS EM QUE A FUNÇAO SEJA DE PELO MENOS
+   PROJETISTA.
+
+   SELECT FUNCAO, MIN(HORAS)
+   FROM ATUACAO
+   WHERE FUNCAO IS NOT NULL
+   GROUP BY FUNCAO
+   HAVING funcao LIKE "Projetista%";
+
+5) Mostre a soma do número de horas de atuação agrupando pelo código de
+   projeto, quando o engenheiro for o 95 ou a função for 'Supervisor'.
+   MOSTRANDO SOMENTE AS SOMAS NÃO NULAS.
+
+   SELECT CODPROJ, SUM(HORAS)
+   FROM ATUACAO
+   WHERE CODENG = 95 OR FUNCAO = 'Supervisor'
+   GROUP BY CODPROJ
+   HAVING SUM(HORAS) IS NOT NULL;
