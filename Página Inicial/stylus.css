@@ -1,0 +1,254 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+.banner-image{
+    background-image: url(imagens\bg7.jpeg);
+    background-size: cover;
+}
+.search-bar {
+    font-size: 20px;
+    margin-left: 12px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px, 5px, 10px, rgba(0, 0, 0, 0.219);
+}
+.slider{
+    position: absolute;
+    display: block;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    object-fit: cover;
+}
+.slides{
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+.slides input {
+    display: none;
+}
+.slide{
+    width: 25%;
+    height: 100%;
+    position: relative;
+    transition: 1.75s ease;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+.manual-navigation{
+    position: relative;
+    width: 200px;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0px;
+    margin-left: 30px;
+    vertical-align: auto;
+}
+.manual-btn{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+.manual-btn:not(last-child){
+    margin-right: 20px;
+}
+.manual-btn:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    transition: 0.75s;
+}
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+.navigation-auto div{
+    border: 2px solid rgb(86, 86, 86);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.75s;
+    display: none;
+}
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 20px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: rgb(0, 0, 0);
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: rgb(0, 0, 0);
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: rgb(0, 0, 0);
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: rgb(0, 0, 0);
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    position: relative;
+    vertical-align: top;
+    height: 112px;
+    margin-top: 32px;
+}
+.logo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-left: 42px;
+    margin-top: 72px;
+    width: 337px;
+}
+.header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 112px;
+    background-color: transparent;
+}
+button{
+    font-size: 13px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    width: 100px;
+    padding: 20px;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: bold;
+    transition: border 0.25s;
+}
+.btn{
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin: 10px;
+    padding: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    width: auto;
+}
+#menu_p{
+    list-style: none;
+    float: right;
+    padding-right: 30px;
+    position: relative;
+    margin-right: 0px;
+}
+#menu_p ul{
+    max-width: 700px;
+    list-style: none;
+    padding: 0;
+    vertical-align: top;
+}
+#menu_p ul li{
+  display: inline;
+}
+#menu_p ul li a{
+    color: white;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+#menu_p ul li a:hover{
+    background-color: rgba(88, 87, 87, 0.219);
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.219);
+}
+#menu_p ul li a:active {
+    opacity: 0.5;
+    border-radius: 20px;
+}
+#menu_contact{
+    color: white;
+    list-style: none;
+    float: left;
+    font-size: 40px;
+}
+#menu_contact ul{
+    color: white;
+    width: 400px;
+    list-style: none;
+    padding: 0;
+    margin-left: 10px;
+}
+#menu_contact ul li{
+    display: inline;
+}
+#menu_contact ul li a{
+      color: white;
+      padding: 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: 2s;
+}
+#menu_contact ul li a i{
+height: 10px;
+}
+
+#menu_contact ul li a:hover{
+    background-color: rgba(88, 87, 87, 0.219);
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.219);
+}
+.footer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    margin: 0px;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: transparent;
+}
+                                           
+
+
