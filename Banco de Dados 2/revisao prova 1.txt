@@ -1,0 +1,68 @@
+1)
+	create database consultorio;
+	use consultorio;
+	
+	create table paciente(
+		CodPac int(4) auto_increment,
+		Nome varchar(75) not null,
+		Cidade varchar(50),
+		Telefone varchar(15),
+		primary key (CodPac));
+
+	create table medico(
+		IdMed int(4) auto_increment,
+		Nome varchar(75) not null,
+		Especialidade varchar(125),
+		CRM int(4) not null unique,
+		primary key (IdMed));
+	
+	create table consulta(
+		Id int(10) auto_increment,
+		CodPac int(4),
+		IdMed int(4),
+		Data date,
+		Hora time,
+		primary key (Id),
+		foreign key (CodPac) references paciente (CodPac),
+		foreign key (IdMed) references medico (IdMed));
+
+		
+	alter table paciente add CPF varchar(15) unique not null;
+	
+	drop table paciente;
+	drop table medico;
+	drop table consulta;
+	
+	insert into paciente (Nome, Cidade, Telefone, CPF) values("Maria Desaparecida", "Santo Ângelo", "(55)3333-1212", "3948203");
+	insert into paciente (Nome, Cidade, Telefone, CPF) values("João das Neves", "Ijuí", null , "23094209");
+	insert into paciente (Nome, Cidade, Telefone, CPF) values("Carlos Miguel", "Santa Rosa", "(55)3333-1111", "23498294");
+
+	insert into medico (Nome, Especialidade, CRM) values("Darth Vader", "Clínico Geral", 1234);
+	insert into medico (Nome, Especialidade, CRM) values("Cersei Lannister", "Cardiologista", 3332);
+	insert into medico (Nome, Especialidade, CRM) values("Gabriel Jaeger", "Tramatologista", 4321);
+
+	insert into consulta (CodPac, IdMed, Data, Hora) values(1, 2, '2020-07-10', '10:00');
+	insert into consulta (CodPac, IdMed, Data, Hora) values(3, 1, '2020-09-01', '14:30');
+	insert into consulta (CodPac, IdMed, Data, Hora) values(2, 3, null, null);
+
+	update consulta set data = '2020-10-02' where Id = 2;
+	
+	delete from consulta where Id = 3;
+
+	select IdMed, Data, Hora 
+		from consulta 
+		where CodPac = 2 
+		order by Data desc;
+	
+	select * 
+		from consulta 
+		where Data >= '2020-07-10' and data <= '2020-07-11' 
+		order by CodPac asc, IdMed desc;
+	
+	select Nome 
+		from  paciente
+		where CodPac > 1 and CodPac < 3;
+	
+	select *
+		from medico
+		where CRM <> 1234;

@@ -1,0 +1,68 @@
+
+create database Consultas;
+
+use Consultas;
+
+	create table medico(ID_med int, nome varchar(50), CRM varchar(15), endereco varchar(50), primary key (ID_med));
+	
+	create table paciente(ID_Pac int, nome varchar(50), primary key (ID_Pac));
+	
+	create table consulta(ID int, ID_Medico int, ID_Paciente int, dia date, hora time, primary key(ID), foreign key (Id_Medico) references medico (ID_Med), foreign key(ID_Paciente) references paciente (ID_Pac));
+
+
+	insert into medico values (1, "Carlos Miguel", "123456789", "rua nao sei"); 
+	insert into medico values (2, "Jonas Robert", "12345678", "rua nao se"); 
+	insert into medico values (3, "Luane Veiga", "1234567", "rua nao s"); 
+	insert into medico values (4, "Yago Turman", "123456", "rua nao "); 
+	insert into medico values (5, "Jefferson Bernardi", "12345", "rua na"); 
+
+
+	update medico set nome = "Fabricio Junior" where ID_med = 3;
+
+	
+	insert into paciente values (1, "Kevin Dahr");
+	insert into paciente values (2, "Julian Frost");
+	insert into paciente values (3, "Gabriel Diabo");
+	insert into paciente values (4, "Vartemis da Silva");
+	insert into paciente values (5, "Jão das Paia");	 
+	
+	
+	insert into consulta values (1, 1, 4,'1969-12-24','09:34:53');
+	insert into consulta values (2, 3, 3,'1942-12-24','07:23:29');
+	insert into consulta values (3, 5, 2,'1832-12-24','12:47:43');
+	insert into consulta values (4, 2, 1,'1950-12-24','05:52:24');
+	insert into consulta values (5, 4, 2,'1999-12-24','10:17:39');
+
+	update paciente set nome = "Wallace Perereira" where ID_Pac = 3;
+	update consulta set data = '1745-11-09' where ID = 2;
+	update consulta set ID_Paciente = 5 where ID = 5;
+
+	delete from paciente where ID_Pac = 4;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create database Lotacoes;
+
+use Lotacoes;
+
+	create table departamento(ID_Depto int, nome varchar(50), ramal varchar(10), descricao varchar(255), primary key(ID_Depto));
+
+	create table empregado(ID int, nome varchar(50), RG varchar(15), ID_Depto int, primary key(ID), foreign key(ID_Depto) references departamento (ID_Depto));
+
+	
+	insert into departamento values (1, "Roberto Salvio", "1004", "Cara muito fera, muito gente boa, mt legal ele mesmo");
+	insert into departamento values (2, "Jorge Rino", "1005", "Cara muito muito fera");
+	insert into departamento values (3, "Charles Draga", "1006", "Cara nem tanto fera");
+	insert into departamento values (4, "Alvaro Diuh", "1007", "Cara mais ou menos fera");
+	insert into departamento values (5, "Ygor Xavier", "1008", "Cara estranho");
+
+	insert into empregado values (1, "Tiago Maia", "1278391827", 3);
+	insert into empregado values (2, "Julio Araujo", "134234827", 1);
+	insert into empregado values (3, "Quilbert Fraga", "178456827", 2);
+	insert into empregado values (4, "Pedro Barneas", "1277343827", 4);
+	insert into empregado values (5, "1berto Dias", "1278375675", 2);
+
+	
+	update departamento set  nome = "Achei que era nome de pessoas" where ID_Depto = 4;
+	update empregado set RG = "8723462837", ID_Depto = 5 where ID = 3;
+
+	delete from departamento where ID_Depto = 5;

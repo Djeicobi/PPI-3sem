@@ -1,0 +1,19 @@
+1) Select Count(CodEng) from Engenheiro;
+
+2) Select Sum(Valor) from Projeto where CodProj IN (101,104,105);
+
+3) Select Avg(Horas) from Atuacao where CodProj = 100;
+
+4) Select Max(DataFim) from Projeto;
+
+5) Select Min(DataIni) from Projeto where DataFim IS NOT NULL;
+
+6) Select CodEng, Count(CodProj) from Atuacao Group By CodEng;
+
+7) Select CodEng, Max(Horas) from Atuacao Group By CodEng;
+
+8) Select CodProj, Avg(Horas) from Atuacao Group By CodProj;
+
+9) Select CodProj, Min(Horas) from Atuacao where funcao IS NOT NULL Group By funcao; 
+
+10) Select CodProj, Sum(Horas) from Atuacao where CodEng = 95 or funcao = "Supervisor" Group By CodProj;

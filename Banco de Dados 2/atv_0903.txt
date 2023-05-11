@@ -1,0 +1,10 @@
+
+create database Consultas;
+
+use Consultas;
+
+	create table medico(ID_med int, nome varchar(50), CRM varchar(15), endereco varchar(50), primary key (ID_med));
+	
+	create table paciente(ID int, ID_med, 
+	
+	

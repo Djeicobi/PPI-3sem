@@ -1,0 +1,11 @@
+1) SELECT CodProj, DataIni, TempoAloc FROM ProjEmp WHERE CodEmp IN (10,11,12) and DataIni IS NOT NULL;
+
+2) SELECT CodCat, Salario FROM Categoria WHERE Salario NOT BETWEEN 500 and 1000 ORDER BY CodCat ASC, Salario DESC;
+
+3) SELECT * FROM Projeto WHERE Descr LIKE "%cadastro%" ORDER BY CodProj ASC;
+
+4) SELECT CodProj, CodEmp, DataIni, MONTH(DataIni) + 6, TempoAloc FROM ProjEmp WHERE CodEmp = 14;
+
+5) SELECT CodProj, TempoAloc FROM ProjEmp WHERE CodEmp IN (11,13) and Year(DataIni) = 2021;
+
+6) SELECT * FROM ProjEmp WHERE MONTH(DataIni) BETWEEN 1 and 6;
