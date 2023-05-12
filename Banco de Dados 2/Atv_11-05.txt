@@ -1,0 +1,25 @@
+1)
+SELECT Engenheiro.Nome, Engenheiro.CPF, Atuacao.Funcao
+FROM Engenheiro, Atuacao
+WHERE Engenheiro.CodEng = Atuacao.CodEng AND Atuacao.CodProj = 100;
+
+2)
+SELECT Projeto.Titulo, Atuacao.Funcao
+FROM Projeto, Atuacao
+WHERE Projeto.CodProj = Atuacao.CodProj AND Atuacao.CodEng = 95;
+
+3)
+SELECT Engenheiro.Nome, Atuacao.Funcao
+FROM Engenheiro, Atuacao
+WHERE Engenheiro.CodEng = Atuacao.CodEng AND Atuacao.CodProj IN (100, 102, 103);
+
+4)
+SELECT Projeto.Titulo, Engenheiro.Nome
+FROM Engenheiro, Projeto, Atuacao
+WHERE Engenheiro.CodEng = Atuacao.CodEng AND Atuacao.CodProj = Projeto.CodProj AND Atuacao.Funcao IS NULL;
+
+5)
+SELECT Projeto.Titulo, Engenheiro.Nome, Atuacao.Funcao
+FROM Projeto, Atuacao, Engenheiro
+WHERE Engenheiro.CodEng = Atuacao.CodEng AND Atuacao.CodProj = Projeto.CodProj 
+AND YEAR(Projeto.DataIni) = 2021 AND YEAR(Projeto.DataFim) = 2022; 
