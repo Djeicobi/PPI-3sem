@@ -1,0 +1,91 @@
+UML - Unified modeling language
+
+Notação ou uma padronização unificada de modelagem (Diagramação e desenvolvimento) de software.
+Consiste em uma linguagem de modelagem e não em metodologia de desenvolvimento de sistemas/software.
+
+Última versão: 2.5.1 publicada em dez/2017 http://uml.org
+
+UML - Conceitos
+
+A UML contempla os conceitos de  orientação à objetos (o.o).
+
+a) Objetos: São entidades que possuem propriedades, ações e podem ser indentificadas.
+
+b) Classes: São as descrições de um conjunto de objetos. Todos os objetos são instâncias de uma classe.
+   A classe descreve as propriedades e o comportamento de um tipo de objetos.
+
+c) Métodos: Definição das ações de um objeto. Identifica o que deve ser feito, como e quando deve ser feito, porque deve ser feito.
+
+
+1) Diagrama Comportamental de Casos de Uso
+
+- Ser compreensível a usuários leigos em informática.
+- Auxiliar a tarefa de análise, especificando funcionalidades e o comportamento do sistema.
+- Delimitar o sistema.
+- Servir de base para derivar casos de teste.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Atores:
+
+* Alguém ou alguma coisa que interage com o sistema.
+* Estimulam o sistema com eventos de entrada, ou recebem alguma coisa dele, ou seja, envia ou recebe mensagens, troca informações.
+* Designados pelo papel que exercem no caso de uso. Ex: cliente, operador, etc.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Casos de Uso:
+
+Um Caso de Uso é representado por uma elipse e um rótulo com o nome do caso de uso.
+
+Um caso de uso define uma grande função do sistema!!!
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Relacionamentos: Ajudam a descrever casos de uso entre um ator e um caso de uso.
+
+
+ator(desenho de uma pessoa) --------> casos de uso(desenho de um circulo)
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Sistema: Limites do Sistema: representado por um retângulo envolvendo os casos de uso que compõem o sistema.
+
+Nome do Sistema: Localizado dentro do retângulo.
+
+anexo (foto do quadro)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+((Waterfall)) (palavra do dia) (agile) (scrum) (kanban) |                |    draw.io       |                 |                   | 
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Especificação de Caso de Uso
+
+-Descrição textual em sequência de eventos 
+-Descreve em detalhes, como o ator e o caso de uso interagem 
+
+Deve ser considerado:
+
+-Passos para execução de um caso de uso do início ao fim.
+
+*Sequência padrão: funcionamento esperado
+
+*Sequências Alternativas ou de exceção (erros).
+
+-Identificação Caso de Uso (código)
+-Nome Caso de Uso (Igual ao diagrama)
+-Atores (Todos envolvidos neste caso de uso)
+-Tipo (Prioridade do caso de uso)
+	Primário (fundamental), Secundário ou opcional (implementação futura)
+-Pré-condições: Estado sistema paara que caso de uso possa iniciar
+-Pós-condições: Estado do sistema após a execução dos casos de uso
+-Sequência de eventos:
+	fluxo básico: execução ideal
+	fluxo alternativo: situações erro ou execução
+-Requisitos não funcionais (Opcional)
+
+
+
+
+
+
+
+
+
+
